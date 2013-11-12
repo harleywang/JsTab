@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tab</title>
+<style type="text/css">
+.title{ height:30px; line-height:30px; font-size:14px; background:#DDD; padding-left:20px;}
+.box{ border:1px solid #369; font-size:14px}
+.mos-tabs{ height:40px; border-bottom:2px solid #369}
+.mos-tabs span{ display:inline-block; height:40px; line-height:40px; padding:0 40px; cursor:pointer}
+.mos-tabs span.current{ background:#369; cursor:default; color:#fff}
+.mos-tabs span.children{ background:#9c3}
+.mos-contents{}
+.mos-contents div{ display:none; height:100px; padding:20px;}
+.doubleTab div{ padding:0; height:auto}
+.doubleTab dl{ float:left; width:107px; height:200px; border-right:1px solid #900; padding:0; margin:0; clear:both}
+.doubleTab dt{ height:40px; line-height:40px; text-align:right; padding-right:20px; cursor:pointer}
+.doubleTab dt.current{ background:#900; color:#fff; cursor:default}
+.doubleTab .doubleTabContent{ float:left; display:block;  height:200px;}
+.doubleTab .doubleTabContent div{ padding:15px;}
+</style>
+</head>
+<body>
+<div class="title">Demo1. 最普通的Tab切换，鼠标划过切换。</div>
+<div class="box">
+	<div id="mos-tabs1" class="mos-tabs">
+    	<span>新闻</span><span>财经</span><span>房产</span><span>儿童</span>
+    </div>
+	<div id="mos-contents1" class="mos-contents">
+    	<div>新闻</div>
+        <div>财经</div>
+        <div>房产</div>
+        <div>儿童</div>
+    </div>
+</div>
+<br />
+<div class="title">Demo2. 鼠标单击切换，静态内容和动态内容混合模式。</div>
+<div class="box">
+	<div id="mos-tabs2" class="mos-tabs">
+    	<span>新闻</span><span>财经</span><span>房产</span><span>儿童</span>
+    </div>
+	<div id="mos-contents2" class="mos-contents">
+    	<div>新闻</div>
+        <div>财经</div>
+        <div>房产</div>
+        <div title="children"></div>
+    </div>
+</div>
+<br />
+<div class="title">Demo3. 鼠标划过切换，延时150毫秒显示，防止误操作。</div>
+<div class="box">
+	<div id="mos-tabs3" class="mos-tabs">
+    	<span>新闻</span><span>财经</span><span>房产</span><span>儿童</span>
+    </div>
+	<div id="mos-contents3" class="mos-contents">
+    	<div>新闻</div>
+        <div>财经</div>
+        <div>房产</div>
+        <div>儿童</div>
+    </div>
+</div>
+<br />
+<div class="title">Demo4. 页卡顺序与内容顺序不符时，指定配对属性（mateAttribute）自动完成绑定。</div>
+<div class="box">
+	<div id="mos-tabs4" class="mos-tabs">
+    	<span title="新闻">新闻</span><span title="财经">财经</span><span title="房产">房产</span><span title="儿童">儿童</span>
+    </div>
+	<div id="mos-contents4" class="mos-contents">
+        <div title="财经">财经</div>
+        <div title="儿童">儿童</div>
+        <div title="新闻">新闻</div>
+        <div title="房产">房产</div>
+    </div>
+</div>
+<br />
+<div class="title">Demo5. 当页卡数量未知时，设置(使用负数)最后一个为默认页卡。</div>
+<div class="box">
+	<div id="mos-tabs5" class="mos-tabs">
+    	<span>新闻</span><span>财经</span><span>房产</span><span>儿童</span><span>视频</span>
+    </div>
+	<div id="mos-contents5" class="mos-contents">
+    	<div>新闻</div>
+        <div>财经</div>
+        <div>房产</div>
+        <div>儿童</div>
+        <div>视频</div>
+    </div>
+</div>
+<br />
+<div class="title">Demo6. 页卡嵌套组合模式支持。</div>
+<div class="box">
+	<div id="mos-tabs6" class="mos-tabs">
+    	<span>新闻</span><span>财经</span><span>Apple</span>
+    </div>
+	<div id="mos-contents6" class="mos-contents doubleTab">
+    	<div>
+        	<dl><dt>北京新闻</dt><dt>天津新闻</dt><dt>新闻早知道</dt><dt>南方周末</dt></dl>
+        	<div class="doubleTabContent">
+            	<div>北京新闻</div>
+                <div>天津新闻</div>
+                <div>新闻早知道</div>
+                <div>南方周末</div>
+            </div>
+            <div style="clear:both; display:block"></div>
+        </div>
+        <div>
+        	<dl><dt>经财视界</dt><dt>经财学堂</dt><dt>腾讯经财</dt></dl>
+        	<div class="doubleTabContent">
+            	<div>经财视界</div>
+                <div>经财学堂</div>
+                <div>腾讯经财</div>
+            </div>
+            <div style="clear:both; display:block"></div>
+        </div>
+        <div>
+        	<dl><dt>iPhone</dt><dt>iPad</dt><dt>iPod</dt></dl>
+        	<div class="doubleTabContent">
+            	<div>iPhone</div>
+                <div>iPad</div>
+                <div>iPod</div>
+            </div>
+            <div style="clear:both; display:block"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var $ = function(id){ return document.getElementById(id);};
+
+
+/**
+ * tab.js
+ *
+ * Release 1.0.1.1
+ * @author <a href="mailto:haley.wang.vip@gmail.com">Haley Wang</a>
+ *
+ * Tab参数说明：
+ * 	@param {Object} options          对象类型，各属性说明如下。
+ * 	 +--@param {Element} tabElement      必选参数，所有Tab标签的外框元素对象。
+ * 	 +--@param {Element} contentElement  必选参数，所有内容（Content）的外框元素对象。
+ * 	 +--@param {String} currentClass     可选参数，当前Tab的样式（Class），缺省值为：current
+ * 	 +--@param {String} eventType        可选参数，使用什么事件来驱动切换，缺省值为：onclick，例如：onclick、onmouseover
+ * 	 +--@param {Number} defaultIndex     可选参数，缺省显示哪个Tab，从0开始计数，该参数缺省值为0
+ *   +--@param {Number} deferTime		 可选参数，事件触发延迟的豪秒数
+ *   +--@param {String} mateAttribute	 可选参数，当前页卡顺序与内容顺序不一至时，可以指定一个配对属性。
+ *
+ *  @param {Function} onchange       可选参数，回调函数，回调函数的参数说明如下：
+ *   +--@param {Object} that			 可选参数，当前的对象
+ *   +--@param {Number} index			 可选参数，被显示的索引
+ *   +--@param {Element} tab			 可选参数，当前Tab的元素DOM
+ *   +--@param {Element} content		 可选参数，当前Content的元素的DOM
+ */
+var Tab = function(){ this.initialize.apply(this, arguments);};
+Tab.prototype = {
+	initialize: function(options, onchange){
+		this.onchange = onchange || null;
+		this.setOptions(options);
+		this.binding();
+	},
+	setOptions: function(options){
+		this.tabElement = options.tabElement || null;
+		this.contentElement = options.contentElement || null;
+		this.currentClass = options.currentClass || 'current';
+		this.eventType = options.eventType || 'onclick';
+		this.defaultIndex = options.defaultIndex || 0;
+		this.deferTime = Math.abs(options.deferTime) || 0;
+		this.mateAttribute = options.mateAttribute || null;
+		this.tabTimer = null;
+		this.targetCache = null;
+		this.instance = [];
+	},
+	binding: function(){
+		var tabs = this.tabElement.children,
+		contents = this.contentElement.children,
+		i = tabs.length,
+		that = this,
+		di = (this.defaultIndex%i+i)%i;
+
+		if(i != contents.length )
+			throw new Error("tabs numbers or contents numbers erorr!");
+
+		for(;i--;){
+			if(this.mateAttribute){
+				var j=contents.length, att = tabs[i].getAttribute(this.mateAttribute);
+				while(j--){
+					if(contents[j].getAttribute(this.mateAttribute) == att){
+						tabs[i].setAttribute('index', j);
+						break;
+					}
+				}
+			}else{
+				tabs[i].setAttribute('index', i);
+			}
+		}
+
+		tabs[di].className = that.currentClass;
+		var contentIndex = tabs[di].getAttribute('index');
+		contents[contentIndex].style.display = 'block';
+		this.targetCache = tabs[di];
+		if(that.onchange){
+			that.onchange(that, di, tabs[di], contents[contentIndex]);
+		}
+
+		this.tabElement[this.eventType] = function(e){
+			e = e||window.event;
+			var target = e.target||e.srcElement;
+			if(this != target.parentNode){ return;}
+
+			window.clearTimeout(that.tabTimer);
+			that.tabTimer = window.setTimeout(function(){
+					var index = target.getAttribute('index');
+					var cacheIndex = that.targetCache.getAttribute('index');
+					if(index != cacheIndex){
+						target.className = that.currentClass;
+						contents[index].style.display = 'block';
+
+						that.targetCache.className = '';
+						contents[cacheIndex].style.display = 'none';
+
+						that.targetCache = target;
+						if(that.onchange){ that.onchange(that, index, target, contents[index]);}
+				};
+			}, that.deferTime);
+
+			if('function' === typeof e.preventDefault){
+				e.preventDefault();
+				e.stopPropagation();
+			}else{
+				e.returnValue = false;
+				e.cancelBubble = true;
+			}
+			return false;
+		};
+		if(that.deferTime>0){
+			that.tabElement.onmouseout = function(){
+				window.clearTimeout(that.tabTimer);
+			};
+		}
+	}
+};
+
+
+
+
+
+/*
+	Demo 实现
+*/
+
+new Tab({tabElement:$('mos-tabs1'), contentElement:$('mos-contents1'), eventType:'onmouseover'});
+
+new Tab({tabElement:$('mos-tabs2'), contentElement:$('mos-contents2'), defaultIndex:1},
+	function(that, index, tabobj, contentObj){
+		if(contentObj.title == 'children'){
+			tabobj.className = ' children';
+			contentObj.innerHTML = 'Go to Ajax';
+		}
+	});
+
+new Tab({tabElement:$('mos-tabs3'),
+	 contentElement:$('mos-contents3'),
+	 defaultIndex:1,
+	 eventType:'onmouseover',
+	 deferTime: 150});
+
+new Tab({tabElement:$('mos-tabs4'),
+	contentElement:$('mos-contents4'),
+	defaultIndex:2,
+	mateAttribute:'title'});
+
+new Tab({tabElement:$('mos-tabs5'),	contentElement:$('mos-contents5'), defaultIndex:-1});
+
+
+new Tab({tabElement:$('mos-tabs6'), contentElement:$('mos-contents6'), defaultIndex:0},
+	function(that, index, tabobj, contentObj){
+		var tabbox = contentObj.getElementsByTagName("dl")[0];
+		var contentbox = contentObj.children[1];
+		if(tabbox && contentbox && !that.instance[index]){
+			that.instance[index] = new Tab({tabElement:tabbox,	contentElement:contentbox});
+		}
+	});
+</script>
+</body>
+</html>
